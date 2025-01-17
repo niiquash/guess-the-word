@@ -21,6 +21,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 76px;
 }
 
 /* Header */
@@ -118,6 +119,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
 }
 
 /* Keyboard */
@@ -150,4 +152,39 @@ body {
 
 .key:hover {
   background-color: aliceblue;
+}
+
+.key__correct {
+  background-color: #10a95b;
+}
+
+.key__correct:hover {
+  background-color: #10a95b;
+}
+
+.key__incorrect {
+  background-color: #ec5d49;
+}
+
+.key__incorrect:hover {
+  background-color: #ec5d49;
+}
+
+.button {
+  margin-top: 36px;
+  background-color: #11b5e5;
+  padding: 6px 12px;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 20.85px;
+  width: 228px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
