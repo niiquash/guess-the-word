@@ -23,9 +23,11 @@ body {
   justify-content: center;
 }
 
+/* Header */
+
 .header {
   width: inherit;
-  padding: 73px 121px;
+  padding: 73px 121px 0px 121px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,4 +49,51 @@ body {
   font-weight: 500;
   line-height: 18.24px;
   color: #8e8e8e;
+}
+
+/* Status */
+.status {
+  margin-top: 20px;
+  background-color: #10a95b;
+  width: 352px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+}
+
+.status__h2 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26.06px;
+  text-align: center;
+  color: #f9f4da;
+}
+
+.status__p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.85px;
+  text-align: center;
+  color: #f9f4da;
+}
+
+/* Languages */
+.languages__container {
+  margin-top: 36px;
+  max-width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+}
+
+.language {
+  border-radius: 3px;
+  padding: 4.5px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
 }
