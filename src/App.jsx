@@ -9,7 +9,7 @@ import NewGameButton from "./components/NewGameButton";
 
 const App = () => {
   const [chips, setChips] = useState(languages);
-  const [currentWord, setCurrentWord] = useState("react");
+  const [currentWord, setCurrentWord] = useState("estate");
   const [guessedLetters, setGuessedLetters] = useState([]);
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const alphabetArray = alphabet.split("");
@@ -40,7 +40,7 @@ const App = () => {
 
   const charArray = currentWord.split("");
   const currentWordChars = charArray.map((ch, idx) => (
-    <Character key={idx} char={ch} />
+    <Character key={idx} char={guessedLetters.includes(ch) ? ch : ""} />
   ));
 
   const languageChips = chips.map((chip) => (
