@@ -119,3 +119,35 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* Keyboard */
+.keyboard__container {
+  margin-top: 36px;
+  max-width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.key {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcba29;
+  color: #1e1e1e;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.03s;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.key:hover {
+  background-color: aliceblue;
+}
