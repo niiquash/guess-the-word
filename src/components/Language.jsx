@@ -1,14 +1,16 @@
 import React from "react";
 
-const Language = ({ name, backgroundColor, color }) => {
+const Language = ({ name, backgroundColor, color, isLanguageLost }) => {
   const styles = {
-    backgroundColor: backgroundColor,
-    color: color,
+    backgroundColor,
+    color,
   };
 
   return (
-    <div style={styles} className="language">
-      {name}
+    <div className={isLanguageLost ? "language__overlay" : ""}>
+      <div className="language" style={styles}>
+        {name}
+      </div>
     </div>
   );
 };
