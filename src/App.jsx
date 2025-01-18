@@ -14,6 +14,12 @@ const App = () => {
   const [wrongGuessCount, setWrongGuessCount] = useState(0);
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const alphabetArray = alphabet.split("");
+  const isGameWon = currentWord.split("").every((ch) => {
+    return guessedLetters.includes(ch);
+  });
+  const isGameLost = wrongGuessCount === languages.length - 1;
+  const isGameOver = isGameLost || isGameWon;
+  const deadLanguage = chips[wrongGuessCount - 1];
 
   const addGuessedLetters = (letter) => {
     if (!currentWord.includes(letter) && !guessedLetters.includes(letter)) {
@@ -23,10 +29,6 @@ const App = () => {
       prev.includes(letter) ? prev : [...prev, letter]
     );
   };
-
-  useEffect(() => {
-    console.log(wrongGuessCount);
-  }, [wrongGuessCount]);
 
   const keys = alphabetArray.map((letter, idx) => {
     const statusClass = currentWord.includes(letter)
@@ -67,11 +69,15 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Status />
+      <Status
+        isGameWon={isGameWon}
+        isGameOver={isGameOver}
+        deadLanguage={deadLanguage}
+      />
       <section className="languages__container">{languageChips}</section>
       <section className="characters__container">{currentWordChars}</section>
       <section className="keyboard__container">{keys}</section>
-      <NewGameButton />
+      {isGameOver && <NewGameButton />}
     </div>
   );
 };

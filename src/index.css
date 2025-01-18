@@ -53,10 +53,36 @@ body {
 }
 
 /* Status */
-.status {
+.status__win {
   margin-top: 20px;
   background-color: #10a95b;
   width: 352px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+}
+
+.status__lose {
+  margin-top: 20px;
+  background-color: #ba2a2a;
+  width: 352px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+}
+
+.status__farewell {
+  margin-top: 20px;
+  background-color: #7a5ea7;
+  width: 352px;
+  height: 59px;
+  border: 1px dashed #323232;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
