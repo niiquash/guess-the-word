@@ -27,19 +27,3 @@ const Status = ({ isGameWon, isGameOver, deadLanguage }) => {
 };
 
 export default Status;
-
-/**
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- */

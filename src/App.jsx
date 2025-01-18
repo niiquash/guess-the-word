@@ -6,10 +6,16 @@ import { languages } from "./languages";
 import Character from "./components/Character";
 import Key from "./components/Key";
 import NewGameButton from "./components/NewGameButton";
+import { words } from "./words";
 
 const App = () => {
+  const getCurrentWord = () => {
+    const randomIndex = Math.floor(Math.random() * words.length);
+    return words[randomIndex];
+  };
+
   const [chips, setChips] = useState(languages);
-  const [currentWord, setCurrentWord] = useState("estate");
+  const [currentWord, setCurrentWord] = useState(() => getCurrentWord());
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongGuessCount, setWrongGuessCount] = useState(0);
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
