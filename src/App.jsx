@@ -7,8 +7,11 @@ import Character from "./components/Character";
 import Key from "./components/Key";
 import NewGameButton from "./components/NewGameButton";
 import { words } from "./words";
+import ReactConfetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 const App = () => {
+  const { width, height } = useWindowSize();
   const getCurrentWord = () => {
     const randomIndex = Math.floor(Math.random() * words.length);
     return words[randomIndex];
@@ -86,6 +89,7 @@ const App = () => {
 
   return (
     <div className="App">
+      {isGameWon && <ReactConfetti width={width} height={height} />}
       <Header />
       <Status
         isGameWon={isGameWon}
