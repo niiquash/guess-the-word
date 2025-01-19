@@ -56,7 +56,12 @@ const App = () => {
 
   const charArray = currentWord.split("");
   const currentWordChars = charArray.map((ch, idx) => (
-    <Character key={idx} char={guessedLetters.includes(ch) ? ch : ""} />
+    <Character
+      key={idx}
+      char1={guessedLetters.includes(ch) ? ch : ""}
+      char2={ch}
+      isGameLost={isGameLost}
+    />
   ));
 
   const languageChips = chips.map((chip, idx) => {

@@ -1,8 +1,7 @@
 import React from "react";
-import clsx from "clsx";
 
-const Character = ({ char }) => {
-  return <span className="character">{char}</span>;
+const Character = ({ char1, char2, isGameLost }) => {
+  return <span className="character">{isGameLost ? char2 : char1}</span>;
 };
 
 export default Character;

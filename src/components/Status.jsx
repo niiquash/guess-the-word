@@ -21,7 +21,9 @@ const Status = ({ isGameWon, isGameOver, deadLanguage }) => {
         <section className="status__farewell">
           <p className="status__p">{`Sayonara ${deadLanguage.name} 🫡`}</p>
         </section>
-      ) : null}
+      ) : (
+        <section className="status__empty"></section>
+      )}
     </>
   );
 };
