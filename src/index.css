@@ -235,6 +235,10 @@ body {
   background-color: #ec5d49;
 }
 
+.key:disabled {
+  background-color: #fcba29;
+}
+
 .button {
   margin-top: 36px;
   background-color: #11b5e5;

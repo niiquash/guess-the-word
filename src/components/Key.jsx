@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-const Key = ({ letter, addGuessedLetters, statusClass }) => {
+const Key = ({ letter, addGuessedLetters, statusClass, isGameOver }) => {
   return (
     <button
       onClick={addGuessedLetters}
@@ -9,6 +9,7 @@ const Key = ({ letter, addGuessedLetters, statusClass }) => {
         key__correct: statusClass === "correct",
         key__incorrect: statusClass === "incorrect",
       })}
+      disabled={isGameOver}
     >
       {letter}
     </button>

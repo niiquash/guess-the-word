@@ -50,6 +50,7 @@ const App = () => {
         key={idx}
         letter={letter}
         statusClass={statusClass}
+        isGameOver={isGameOver}
       />
     );
   });
@@ -77,6 +78,12 @@ const App = () => {
     );
   });
 
+  const startNewGame = () => {
+    setCurrentWord(getCurrentWord());
+    setGuessedLetters([]);
+    setWrongGuessCount(0);
+  };
+
   return (
     <div className="App">
       <Header />
@@ -88,7 +95,7 @@ const App = () => {
       <section className="languages__container">{languageChips}</section>
       <section className="characters__container">{currentWordChars}</section>
       <section className="keyboard__container">{keys}</section>
-      {isGameOver && <NewGameButton />}
+      {isGameOver && <NewGameButton startNewGame={startNewGame} />}
     </div>
   );
 };
