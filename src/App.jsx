@@ -29,6 +29,8 @@ const App = () => {
   const isGameLost = wrongGuessCount === languages.length - 1;
   const isGameOver = isGameLost || isGameWon;
   const deadLanguage = chips[wrongGuessCount - 1];
+  const lastGuessedLetter = guessedLetters[guessedLetters.length - 1];
+  const lastGuessedIncorrect = !currentWord.includes(lastGuessedLetter);
 
   const addGuessedLetters = (letter) => {
     if (!currentWord.includes(letter) && !guessedLetters.includes(letter)) {
@@ -95,6 +97,7 @@ const App = () => {
         isGameWon={isGameWon}
         isGameOver={isGameOver}
         deadLanguage={deadLanguage}
+        lastGuessedIncorrect={lastGuessedIncorrect}
       />
       <section className="languages__container">{languageChips}</section>
       <section className="characters__container">{currentWordChars}</section>

@@ -1,6 +1,12 @@
 import React from "react";
+import { getFarewellText } from "../utils";
 
-const Status = ({ isGameWon, isGameOver, deadLanguage }) => {
+const Status = ({
+  isGameWon,
+  isGameOver,
+  deadLanguage,
+  lastGuessedIncorrect,
+}) => {
   return (
     <>
       {isGameOver ? (
@@ -17,9 +23,9 @@ const Status = ({ isGameWon, isGameOver, deadLanguage }) => {
             </p>
           </section>
         )
-      ) : deadLanguage ? (
+      ) : deadLanguage && lastGuessedIncorrect ? (
         <section className="status__farewell">
-          <p className="status__p">{`Sayonara ${deadLanguage.name} 🫡`}</p>
+          <p className="status__p">{getFarewellText(deadLanguage.name)}</p>
         </section>
       ) : (
         <section className="status__empty"></section>
